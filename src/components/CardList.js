@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
+// Iterate over json and create an array of robots with the different values
 const CardList = ({ robots }) => {
   return (
     <div>
