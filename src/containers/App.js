@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
+import ErrorBoundary from "../components/ErrorBoundary";
 import "./App.css";
 
 // Old way of doing React classes but good to know for 1st project
@@ -41,13 +42,15 @@ class App extends Component {
     // If fetch request fails or takes too long, display this msg
     // Can add loading GIF in future
     return !robots.length ? (
-      <h1 className="tc">Loading or Failed Request</h1>
+      <h1 className="tc">Loading or Failed API Request</h1>
     ) : (
       <div className="tc">
         <h1 className="f1">RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <Scroll>
-          <CardList robots={filteredRobots} />;
+          <ErrorBoundary>
+            <CardList robots={filteredRobots} />
+          </ErrorBoundary>
         </Scroll>
       </div>
     );
