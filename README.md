@@ -2,17 +2,11 @@
 
 Live Link : https://robot-friends-beta.vercel.app/
 
-![Screenshot (2810)](https://github.com/Richardhartleydev/Robot-Friends/assets/143696125/c81fcace-95cf-4cc1-bc68-7ddbfe2a7a7a)
+![Screenshot (2813)](https://github.com/Richardhartleydev/Robot-Friends/assets/143696125/f8280528-f850-4d36-8c28-fd268079dfbe)
 
 <hr>
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+## In the project directory, you can run:
 
 ### `npm start`
 
