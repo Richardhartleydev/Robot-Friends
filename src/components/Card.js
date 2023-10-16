@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Card = ({ name, email, id }) => {
+// Declare arguments to display on card from parsed JSON
+const Card = ({ name, email, id, company, username, website }) => {
+  // Set state
+  const [openModal, setOpenModal] = useState(false);
+  const [userDetails, setUserDetails] = useState(false);
+
+  // Function that sets modal state
+  const modal = () => {
+    setOpenModal(!openModal);
+    setUserDetails(e => !e);
+  };
+
   return (
-    // Old tachyons way of Styling - Use Tailwind in future
-    // Template literal a new img, based on different JSON id
-    <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 tc">
-      <img src={`https://robohash.org/${id}?200x200`} alt="Robots" />
-      <div>
-        <h2>{name}</h2>
-        <p>{email}</p>
-      </div>
+    <div
+      className="robo-card bg-light-green dib br4 ma2 shadow-5 ph2 pb3 items-start pointer"
+      // on click run the modal function
+      onClick={modal}
+    >
+      <img
+        src={`https://robohash.org/${id}?200x200`}
+        alt="robofriends robots"
+      />
+      <h2>{name}</h2>
+      {userDetails && (
+        <div>
+          <ul className="list tl">
+            <li>
+              <span className="b">Username:</span> {username}
+            </li>
+            <li>
+              <span className="b">Company:</span> {company}
+            </li>
+            <li>
+              <span className="b">Website:</span> {website}
+            </li>
+            <li>
+              <span className="b">Email:</span> {email}
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
